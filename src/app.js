@@ -10,6 +10,7 @@ const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
 const app = express();
+const port = process.env.PORT || 3000;
 // Set up static dir
 app.use(express.static(publicDirPath));
 // Set up handlebars templates
@@ -80,6 +81,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Server started port 3000...');
+app.listen(port, () => {
+    console.log('Server started port ' + port);
 });
